@@ -1,0 +1,13 @@
+body
+{
+	background-image: url(../img/404.jpg);
+}
+
+.txt
+{
+	position: absolute;
+	left : 40%;
+	bottom: 15%;
+	color: 	#FFFFFF;
+	font-size: 25px;
+}
