@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
 
-	console.log(moveTime);
 	///隐藏主菜单
 	$('.level').hide();
 	$.setVideoLink(-1);
@@ -15,13 +14,18 @@ $(document).ready(function() {
 
     $('.menu-panel').children().hide();
 
+
 	$('.menu-root').mouseenter(function(event) {
 		/* Act on the event */
-		$('.level').slideToggle(400);
+		$('.level').stop(true);
+		$('.level').slideUp();
+		$('.level').slideDown(400);
 	});
 	$('.menu-root').mouseleave(function(event) {
 		/* Act on the event */
-		$('.level').slideToggle(400);
+		$('.level').stop(true);
+		$('.level').slideDown();
+		$('.level').slideUp(400);
 	});
 	$('.main_menu').mouseup(function(event) {
 		/* Act on the event */

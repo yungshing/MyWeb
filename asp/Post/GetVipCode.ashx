@@ -4,6 +4,7 @@ using System;
 using System.Web;
 using System.Web.Script.Serialization;
 using Yungs.Game;
+using Yungs.Game.Database;
 public class GetVipCode : IHttpHandler {
 
     public void ProcessRequest(HttpContext context)
@@ -20,7 +21,9 @@ public class GetVipCode : IHttpHandler {
                 var re = new Follow().GetGameVIPCode(gameID, gname, vip);
                 var res = new JavaScriptSerializer().Serialize(re);
                 context.Response.Write(callBack + "(" + res + ")");
-                new DataBase().AddID(gameID);
+                var sg = new SaveGameID();
+                sg.InsertID(gameID);
+                sg.Dispose();
             }
         }
     }
